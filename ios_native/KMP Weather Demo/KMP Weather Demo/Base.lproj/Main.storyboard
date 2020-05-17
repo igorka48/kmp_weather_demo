@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KMP_Weather_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k19-nO-jbv">
+                                <rect key="frame" x="150" y="349" width="115" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Get Weather"/>
+                                <connections>
+                                    <segue destination="MMq-Hi-yIt" kind="show" id="om9-4D-wdl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="208-75-7zl">
+                                <rect key="frame" x="20" y="205" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="button" destination="k19-nO-jbv" id="M1U-Kg-APh"/>
+                        <outlet property="label" destination="208-75-7zl" id="ltC-sI-Bw4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="120.53571428571428"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="Rjl-aa-cwc">
+            <objects>
+                <viewController modalPresentationStyle="currentContext" id="MMq-Hi-yIt" customClass="WeatherViewController" customModule="KMP_Weather_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="njZ-tN-fzx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTy-GD-ARx">
+                                <rect key="frame" x="31" y="313" width="363" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="i12-wa-AYO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMy-vJ-Jmj">
+                                <rect key="frame" x="31" y="465" width="363" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="IUg-GS-RHT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sMy-vJ-Jmj" firstAttribute="trailing" secondItem="nTy-GD-ARx" secondAttribute="trailing" id="E3R-bA-39g"/>
+                            <constraint firstItem="iYy-uP-Eak" firstAttribute="bottom" secondItem="sMy-vJ-Jmj" secondAttribute="bottom" constant="329" id="EEO-yf-zAe"/>
+                            <constraint firstItem="nTy-GD-ARx" firstAttribute="top" secondItem="iYy-uP-Eak" secondAttribute="top" constant="269" id="Gvh-fq-sd6"/>
+                            <constraint firstItem="sMy-vJ-Jmj" firstAttribute="top" secondItem="nTy-GD-ARx" secondAttribute="bottom" constant="131" id="LH1-wh-G0t"/>
+                            <constraint firstItem="sMy-vJ-Jmj" firstAttribute="leading" secondItem="nTy-GD-ARx" secondAttribute="leading" id="MBs-8s-EFp"/>
+                            <constraint firstItem="sMy-vJ-Jmj" firstAttribute="leading" secondItem="iYy-uP-Eak" secondAttribute="leading" constant="31" id="VF6-Ay-bcP"/>
+                            <constraint firstItem="sMy-vJ-Jmj" firstAttribute="trailing" secondItem="njZ-tN-fzx" secondAttribute="trailingMargin" id="W3g-Wq-T2Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iYy-uP-Eak"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="geP-ah-iI1"/>
+                    <connections>
+                        <outlet property="cityLabel" destination="nTy-GD-ARx" id="5fv-EH-UsH"/>
+                        <outlet property="dscLabel" destination="sMy-vJ-Jmj" id="u8n-bg-0Ri"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="law-gy-LKW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="971.01449275362324" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+</document>
